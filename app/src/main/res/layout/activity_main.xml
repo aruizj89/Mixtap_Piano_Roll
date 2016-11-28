@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.arturo.mixtap_piano_roll.MainActivity">
+
+    <GridLayout
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/gridLayout">
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/gridLayout"
+        android:layout_toRightOf="@+id/gridLayout"
+        android:layout_toEndOf="@+id/gridLayout">
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_row="0"
+        android:layout_column="0"></RelativeLayout>
+
+    <GridLayout
+        android:layout_width="765dp"
+        android:layout_height="432dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:background="@drawable/piano_roll_border">
+
+    <GridLayout
+        android:layout_width="85dp"
+        android:layout_height="432dp"
+        android:layout_row="0"
+        android:layout_column="0">
+
+        <ImageButton android:onClick="bPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/b"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/b_note" />
+
+        <ImageButton android:onClick="aSPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/a_sharp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:background="@drawable/a_sharp_note" />
+
+        <ImageButton android:onClick="aPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/a"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:background="@drawable/a_note" />
+
+        <ImageButton android:onClick="gSPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/g_sharp"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:background="@drawable/g_sharp_note" />
+
+        <ImageButton android:onClick="gPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/g"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:background="@drawable/g_note" />
+
+        <ImageButton android:onClick="fSPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/f_sharp"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:background="@drawable/f_sharp_note" />
+
+        <ImageButton android:onClick="fPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/f"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:background="@drawable/f_note" />
+
+        <ImageButton android:onClick="ePiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/e"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:background="@drawable/e_note" />
+
+        <ImageButton android:onClick="dSPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/d_sharp"
+            android:layout_row="8"
+            android:layout_column="0"
+            android:background="@drawable/d_sharp_note" />
+
+        <ImageButton android:onClick="dPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/d"
+            android:layout_row="9"
+            android:layout_column="0"
+            android:background="@drawable/d_note" />
+
+        <ImageButton android:onClick="cSPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/c_sharp"
+            android:layout_row="10"
+            android:layout_column="0"
+            android:background="@drawable/c_sharp_note" />
+
+        <ImageButton android:onClick="cPiano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/c"
+            android:layout_row="11"
+            android:layout_column="0"
+            android:background="@drawable/c_note" />
+
+    </GridLayout>
+
+    <!--Roll Notes-->
+    <GridLayout
+        android:layout_width="680dp"
+        android:layout_height="432dp"
+        android:layout_row="0"
+        android:layout_column="1">
+
+        <ImageButton android:onClick="bRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r0c0"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/empty_note"/>
+
+        <ImageButton android:onClick="bRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r0c1"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="bRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r0c2"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="bRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r0c3"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="bRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r0c4"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="bRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r0c5"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="bRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r0c6"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="bRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r0c7"
+            android:layout_row="0"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aSRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r1c0"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aSRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r1c1"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aSRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r1c2"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aSRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r1c3"
+            android:layout_row="1"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aSRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r1c4"
+            android:layout_row="1"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aSRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r1c5"
+            android:layout_row="1"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aSRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r1c6"
+            android:layout_row="1"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aSRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r1c7"
+            android:layout_row="1"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r2c0"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r2c1"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r2c2"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r2c3"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r2c4"
+            android:layout_row="2"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r2c5"
+            android:layout_row="2"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r2c6"
+            android:layout_row="2"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="aRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r2c7"
+            android:layout_row="2"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gSRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r3c0"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gSRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r3c1"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gSRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r3c2"
+            android:layout_row="3"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gSRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r3c3"
+            android:layout_row="3"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gSRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r3c4"
+            android:layout_row="3"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gSRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r3c5"
+            android:layout_row="3"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gSRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r3c6"
+            android:layout_row="3"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gSRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r3c7"
+            android:layout_row="3"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r4c0"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r4c1"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r4c2"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r4c3"
+            android:layout_row="4"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r4c4"
+            android:layout_row="4"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r4c5"
+            android:layout_row="4"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r4c6"
+            android:layout_row="4"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="gRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r4c7"
+            android:layout_row="4"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fSRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r5c0"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fSRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r5c1"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fSRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r5c2"
+            android:layout_row="5"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fSRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r5c3"
+            android:layout_row="5"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fSRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r5c4"
+            android:layout_row="5"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fSRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r5c5"
+            android:layout_row="5"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fSRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r5c6"
+            android:layout_row="5"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fSRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r5c7"
+            android:layout_row="5"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r6c0"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r6c1"
+            android:layout_row="6"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r6c2"
+            android:layout_row="6"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r6c3"
+            android:layout_row="6"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r6c4"
+            android:layout_row="6"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r6c5"
+            android:layout_row="6"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r6c6"
+            android:layout_row="6"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="fRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r6c7"
+            android:layout_row="6"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="eRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r7c0"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="eRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r7c1"
+            android:layout_row="7"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="eRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r7c2"
+            android:layout_row="7"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="eRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r7c3"
+            android:layout_row="7"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="eRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r7c4"
+            android:layout_row="7"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="eRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r7c5"
+            android:layout_row="7"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="eRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r7c6"
+            android:layout_row="7"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="eRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r7c7"
+            android:layout_row="7"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dSRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r8c0"
+            android:layout_row="8"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dSRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r8c1"
+            android:layout_row="8"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dSRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r8c2"
+            android:layout_row="8"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dSRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r8c3"
+            android:layout_row="8"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dSRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r8c4"
+            android:layout_row="8"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dSRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r8c5"
+            android:layout_row="8"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dSRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r8c6"
+            android:layout_row="8"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dSRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r8c7"
+            android:layout_row="8"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r9c0"
+            android:layout_row="9"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r9c1"
+            android:layout_row="9"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r9c2"
+            android:layout_row="9"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r9c3"
+            android:layout_row="9"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r9c4"
+            android:layout_row="9"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r9c5"
+            android:layout_row="9"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r9c6"
+            android:layout_row="9"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="dRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r9c7"
+            android:layout_row="9"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cSRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r10c0"
+            android:layout_row="10"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cSRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r10c1"
+            android:layout_row="10"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cSRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r10c2"
+            android:layout_row="10"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cSRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r10c3"
+            android:layout_row="10"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cSRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r10c4"
+            android:layout_row="10"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cSRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r10c5"
+            android:layout_row="10"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cSRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r10c6"
+            android:layout_row="10"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cSRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r10c7"
+            android:layout_row="10"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cRoll0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r11c0"
+            android:layout_row="11"
+            android:layout_column="0"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cRoll1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r11c1"
+            android:layout_row="11"
+            android:layout_column="1"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cRoll2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r11c2"
+            android:layout_row="11"
+            android:layout_column="2"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cRoll3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r11c3"
+            android:layout_row="11"
+            android:layout_column="3"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cRoll4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r11c4"
+            android:layout_row="11"
+            android:layout_column="4"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cRoll5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r11c5"
+            android:layout_row="11"
+            android:layout_column="5"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cRoll6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r11c6"
+            android:layout_row="11"
+            android:layout_column="6"
+            android:background="@drawable/empty_note" />
+
+        <ImageButton android:onClick="cRoll7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/r11c7"
+            android:layout_row="11"
+            android:layout_column="7"
+            android:background="@drawable/empty_note" />
+    </GridLayout>
+
+
+
+
+
+
+    </GridLayout>
+
+    </GridLayout>
+
+</RelativeLayout>
