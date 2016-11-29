@@ -16,6 +16,14 @@
         android:layout_alignParentStart="true"
         android:id="@+id/gridLayout">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            android:id="@+id/button"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:onClick="playTrack" />
     </GridLayout>
 
     <GridLayout
@@ -25,13 +33,7 @@
         android:layout_toRightOf="@+id/gridLayout"
         android:layout_toEndOf="@+id/gridLayout">
 
-        <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_row="0"
-        android:layout_column="0"></RelativeLayout>
-
-    <GridLayout
+        <GridLayout
         android:layout_width="765dp"
         android:layout_height="432dp"
         android:layout_row="1"
@@ -926,5 +928,14 @@
     </GridLayout>
 
     </GridLayout>
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:layout_row="0"
+    android:layout_column="0"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"></RelativeLayout>
 
 </RelativeLayout>
