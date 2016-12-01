@@ -241,8 +241,14 @@ public class MainActivity extends AppCompatActivity {
         else
             rollImages[pitch][time].setImageResource(R.drawable.empty_note);
 
-        if(time != 7)
-            suggestNotes(time+1);
+        if(time == 7 || measure.getNote(time+1) != -1)
+            return;
+
+        //clear current suggestions if any
+        for(int i = 0; i < 18; i++)
+            rollImages[i][time].setImageResource(R.drawable.empty_note);
+
+        suggestNotes(time+1);
     }
 
     private void stop(){
