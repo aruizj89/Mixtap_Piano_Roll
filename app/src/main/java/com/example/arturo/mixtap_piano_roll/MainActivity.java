@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private NoteStructure[][] notes = new NoteStructure[18][8];
     private MeasureStructure measure = new MeasureStructure();
 
     private MediaPlayer mPlayer;
+    private Random random = new Random();
 
     private ImageButton b, a_sharp, a, g_sharp, g, f_sharp, f, e, d_sharp, d, c_sharp, c;
     private ImageButton[][] rollImages = new ImageButton[18][8];
@@ -212,6 +215,13 @@ public class MainActivity extends AppCompatActivity {
         rollImages[17][7] = (ImageButton)findViewById(R.id.r17c7);
     }
 
+    private void suggestNotes(int time){
+        if(measure.getNote(time) != -1)
+            return;
+        for(int i = 0; i < 3; i++)
+            rollImages[random.nextInt(18)][time].setImageResource(R.drawable.suggested_note);
+    }
+
 
     private void roll(int pitch, int time){
         //save pitch and timing into data structure
@@ -230,6 +240,9 @@ public class MainActivity extends AppCompatActivity {
             rollImages[pitch][time].setImageResource(R.drawable.selected_note);
         else
             rollImages[pitch][time].setImageResource(R.drawable.empty_note);
+
+        if(time != 7)
+            suggestNotes(time+1);
     }
 
     private void stop(){
