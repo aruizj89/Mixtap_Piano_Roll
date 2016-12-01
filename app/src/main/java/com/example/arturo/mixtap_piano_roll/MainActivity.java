@@ -232,15 +232,14 @@ public class MainActivity extends AppCompatActivity {
             rollImages[pitch][time].setImageResource(R.drawable.empty_note);
     }
 
-    public void stop(){
+    private void stop(){
         if(mPlayer == null)
             return;
         mPlayer.release();
         mPlayer = null;
     }
 
-    private void playNote(int note){
-        stop();
+    private void setMediaPlayer(int note){
         switch(note){
             case 0:
                 //g high
@@ -315,17 +314,21 @@ public class MainActivity extends AppCompatActivity {
                 mPlayer = MediaPlayer.create(this, R.raw.d);
                 break;
             default:
-                return;
+                break;
         }
+    }
+
+    private void playNote(int note){
+        stop();
+        setMediaPlayer(note);
         mPlayer.start();
 
     }
 
     public void playTrack(View v){
         //to do
+
     }
-
-
 
     //piano key button functions
     public void gHPiano(View v){
