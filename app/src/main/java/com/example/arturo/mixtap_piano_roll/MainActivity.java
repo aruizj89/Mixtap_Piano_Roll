@@ -243,52 +243,76 @@ public class MainActivity extends AppCompatActivity {
         stop();
         switch(note){
             case 0:
-                //b
-                mPlayer = MediaPlayer.create(this, R.raw.b);
+                //g high
+                mPlayer = MediaPlayer.create(this, R.raw.g_high);
                 break;
             case 1:
-                //a#
-                mPlayer = MediaPlayer.create(this, R.raw.a_s);
+                //f# high
+                mPlayer = MediaPlayer.create(this, R.raw.f_s_high);
                 break;
             case 2:
-                //a
-                mPlayer = MediaPlayer.create(this, R.raw.a);
+                //f high
+                mPlayer = MediaPlayer.create(this, R.raw.f_high);
                 break;
             case 3:
-                //g#
-                mPlayer = MediaPlayer.create(this, R.raw.g_s);
+                //e high
+                mPlayer = MediaPlayer.create(this, R.raw.e_high);
                 break;
             case 4:
-                //g
-                mPlayer = MediaPlayer.create(this, R.raw.g);
+                //d# high
+                mPlayer = MediaPlayer.create(this, R.raw.d_s_high);
                 break;
             case 5:
-                //f#
-                mPlayer = MediaPlayer.create(this, R.raw.f_s);
+                //d high
+                mPlayer = MediaPlayer.create(this, R.raw.d_high);
                 break;
             case 6:
-                //f
-                mPlayer = MediaPlayer.create(this, R.raw.f);
-                break;
-            case 7:
-                //e
-                mPlayer = MediaPlayer.create(this, R.raw.e);
-                break;
-            case 8:
-                //d#
-                mPlayer = MediaPlayer.create(this, R.raw.d_s);
-                break;
-            case 9:
-                //d
-                mPlayer = MediaPlayer.create(this, R.raw.d);
-                break;
-            case 10:
                 //c#
                 mPlayer = MediaPlayer.create(this, R.raw.c_s);
                 break;
-            case 11:
+            case 7:
                 //c
                 mPlayer = MediaPlayer.create(this, R.raw.c);
+                break;
+            case 8:
+                //b
+                mPlayer = MediaPlayer.create(this, R.raw.b);
+                break;
+            case 9:
+                //a#
+                mPlayer = MediaPlayer.create(this, R.raw.a_s);
+                break;
+            case 10:
+                //a
+                mPlayer = MediaPlayer.create(this, R.raw.a);
+                break;
+            case 11:
+                //g#
+                mPlayer = MediaPlayer.create(this, R.raw.g_s);
+                break;
+            case 12:
+                //g
+                mPlayer = MediaPlayer.create(this, R.raw.g);
+                break;
+            case 13:
+                //f#
+                mPlayer = MediaPlayer.create(this, R.raw.f_s);
+                break;
+            case 14:
+                //f
+                mPlayer = MediaPlayer.create(this, R.raw.f);
+                break;
+            case 15:
+                //e
+                mPlayer = MediaPlayer.create(this, R.raw.e);
+                break;
+            case 16:
+                //d#
+                mPlayer = MediaPlayer.create(this, R.raw.d_s);
+                break;
+            case 17:
+                //d
+                mPlayer = MediaPlayer.create(this, R.raw.d);
                 break;
             default:
                 return;
@@ -304,637 +328,655 @@ public class MainActivity extends AppCompatActivity {
 
 
     //piano key button functions
-    public void bPiano(View v){
+    public void gHPiano(View v){
         playNote(0);
     }
-    public void aSPiano(View v){
+    public void fSHPiano(View v){
         playNote(1);
     }
-    public void aPiano(View v){
+    public void fHPiano(View v){
         playNote(2);
     }
-    public void gSPiano(View v){
+    public void eHPiano(View v){
         playNote(3);
     }
-    public void gPiano(View v){
+    public void dSHPiano(View v){
         playNote(4);
     }
-    public void fSPiano(View v){
+    public void dHPiano(View v){
         playNote(5);
     }
-    public void fPiano(View v){
+    public void cSPiano(View v){
         playNote(6);
     }
-    public void ePiano(View v){
+    public void cPiano(View v){
         playNote(7);
     }
-    public void dSPiano(View v){
+    public void bPiano(View v){
         playNote(8);
     }
-    public void dPiano(View v){
+    public void aSPiano(View v){
         playNote(9);
     }
-    public void cSPiano(View v){
+    public void aPiano(View v){
         playNote(10);
     }
-    public void cPiano(View v){
+    public void gSPiano(View v){
         playNote(11);
     }
+    public void gPiano(View v){
+        playNote(12);
+    }
+    public void fSPiano(View v){
+        playNote(13);
+    }
+    public void fPiano(View v){
+        playNote(14);
+    }
+    public void ePiano(View v){
+        playNote(15);
+    }
+    public void dSPiano(View v){
+        playNote(16);
+    }
+    public void dPiano(View v){
+        playNote(17);
+    }
+
 
     //piano roll button functions
     public void gHighRoll0(View v){
-        playNote(4);
-        roll(4, 0);
-    }
-    public void gHighRoll1(View v){
-        playNote(4);
-        roll(4, 1);
-    }
-    public void gHighRoll2(View v){
-        playNote(4);
-        roll(4, 2);
-    }
-    public void gHighRoll3(View v){
-        playNote(4);
-        roll(4, 3);
-    }
-    public void gHighRoll4(View v){
-        playNote(4);
-        roll(4, 4);
-    }
-    public void gHighRoll5(View v){
-        playNote(4);
-        roll(4, 5);
-    }
-    public void gHighRoll6(View v){
-        playNote(4);
-        roll(4, 6);
-    }
-    public void gHighRoll7(View v){
-        playNote(4);
-        roll(4, 7);
-    }
-
-    public void fSHighRoll0(View v){
-        playNote(5);
-        roll(5, 0);
-    }
-    public void fSHighRoll1(View v){
-        playNote(5);
-        roll(5, 1);
-    }
-    public void fSHighRoll2(View v){
-        playNote(5);
-        roll(5, 2);
-    }
-    public void fSHighRoll3(View v){
-        playNote(5);
-        roll(5, 3);
-    }
-    public void fSHighRoll4(View v){
-        playNote(5);
-        roll(5, 4);
-    }
-    public void fSHighRoll5(View v){
-        playNote(5);
-        roll(5, 5);
-    }
-    public void fSHighRoll6(View v){
-        playNote(5);
-        roll(5, 6);
-    }
-    public void fSHighRoll7(View v){
-        playNote(5);
-        roll(5, 7);
-    }
-
-    public void fHighRoll0(View v){
-        playNote(6);
-        roll(6, 0);
-    }
-    public void fHighRoll1(View v){
-        playNote(6);
-        roll(6, 1);
-    }
-    public void fHighRoll2(View v){
-        playNote(6);
-        roll(6, 2);
-    }
-    public void fHighRoll3(View v){
-        playNote(6);
-        roll(6, 3);
-    }
-    public void fHighRoll4(View v){
-        playNote(6);
-        roll(6, 4);
-    }
-    public void fHighRoll5(View v){
-        playNote(6);
-        roll(6, 5);
-    }
-    public void fHighRoll6(View v){
-        playNote(6);
-        roll(6, 6);
-    }
-    public void fHighRoll7(View v){
-        playNote(6);
-        roll(6, 7);
-    }
-
-    public void eHighRoll0(View v){
-        playNote(7);
-        roll(7, 0);
-    }
-    public void eHighRoll1(View v){
-        playNote(7);
-        roll(7, 1);
-    }
-    public void eHighRoll2(View v){
-        playNote(7);
-        roll(7, 2);
-    }
-    public void eHighRoll3(View v){
-        playNote(7);
-        roll(7, 3);
-    }
-    public void eHighRoll4(View v){
-        playNote(7);
-        roll(7, 4);
-    }
-    public void eHighRoll5(View v){
-        playNote(7);
-        roll(7, 5);
-    }
-    public void eHighRoll6(View v){
-        playNote(7);
-        roll(7, 6);
-    }
-    public void eHighRoll7(View v){
-        playNote(7);
-        roll(7, 7);
-    }
-
-    public void dSHighRoll0(View v){
-        playNote(8);
-        roll(8, 0);
-    }
-    public void dSHighRoll1(View v){
-        playNote(8);
-        roll(8, 1);
-    }
-    public void dSHighRoll2(View v){
-        playNote(8);
-        roll(8, 2);
-    }
-    public void dSHighRoll3(View v){
-        playNote(8);
-        roll(8, 3);
-    }
-    public void dSHighRoll4(View v){
-        playNote(8);
-        roll(8, 4);
-    }
-    public void dSHighRoll5(View v){
-        playNote(8);
-        roll(8, 5);
-    }
-    public void dSHighRoll6(View v){
-        playNote(8);
-        roll(8, 6);
-    }
-    public void dSHighRoll7(View v){
-        playNote(8);
-        roll(8, 7);
-    }
-
-    public void dHighRoll0(View v){
-        playNote(9);
-        roll(9, 0);
-    }
-    public void dHighRoll1(View v){
-        playNote(9);
-        roll(9, 1);
-    }
-    public void dHighRoll2(View v){
-        playNote(9);
-        roll(9, 2);
-    }
-    public void dHighRoll3(View v){
-        playNote(9);
-        roll(9, 3);
-    }
-    public void dHighRoll4(View v){
-        playNote(9);
-        roll(9, 4);
-    }
-    public void dHighRoll5(View v){
-        playNote(9);
-        roll(9, 5);
-    }
-    public void dHighRoll6(View v){
-        playNote(9);
-        roll(9, 6);
-    }
-    public void dHighRoll7(View v){
-        playNote(9);
-        roll(9, 7);
-    }
-
-
-    public void cSRoll0(View v){
-        playNote(10);
-        roll(10, 0);
-    }
-    public void cSRoll1(View v){
-        playNote(10);
-        roll(10, 1);
-    }
-    public void cSRoll2(View v){
-        playNote(10);
-        roll(10, 2);
-    }
-    public void cSRoll3(View v){
-        playNote(10);
-        roll(10, 3);
-    }
-    public void cSRoll4(View v){
-        playNote(10);
-        roll(10, 4);
-    }
-    public void cSRoll5(View v){
-        playNote(10);
-        roll(10, 5);
-    }
-    public void cSRoll6(View v){
-        playNote(10);
-        roll(10, 6);
-    }
-    public void cSRoll7(View v){
-        playNote(10);
-        roll(10, 7);
-    }
-
-    public void cRoll0(View v){
-        playNote(11);
-        roll(11, 0);
-    }
-    public void cRoll1(View v){
-        playNote(11);
-        roll(11, 1);
-    }
-    public void cRoll2(View v){
-        playNote(11);
-        roll(11, 2);
-    }
-    public void cRoll3(View v){
-        playNote(11);
-        roll(11, 3);
-    }
-    public void cRoll4(View v){
-        playNote(11);
-        roll(11, 4);
-    }
-    public void cRoll5(View v){
-        playNote(11);
-        roll(11, 5);
-    }
-    public void cRoll6(View v){
-        playNote(11);
-        roll(11, 6);
-    }
-    public void cRoll7(View v){
-        playNote(11);
-        roll(11, 7);
-    }
-
-    public void bRoll0(View v){
         playNote(0);
         roll(0, 0);
     }
-    public void bRoll1(View v){
+    public void gHighRoll1(View v){
         playNote(0);
         roll(0, 1);
     }
-    public void bRoll2(View v){
+    public void gHighRoll2(View v){
         playNote(0);
         roll(0, 2);
     }
-    public void bRoll3(View v){
+    public void gHighRoll3(View v){
         playNote(0);
         roll(0, 3);
     }
-    public void bRoll4(View v){
+    public void gHighRoll4(View v){
         playNote(0);
         roll(0, 4);
     }
-    public void bRoll5(View v){
+    public void gHighRoll5(View v){
         playNote(0);
         roll(0, 5);
     }
-    public void bRoll6(View v){
+    public void gHighRoll6(View v){
         playNote(0);
         roll(0, 6);
     }
-    public void bRoll7(View v){
+    public void gHighRoll7(View v){
         playNote(0);
         roll(0, 7);
     }
 
-    public void aSRoll0(View v){
+    public void fSHighRoll0(View v){
         playNote(1);
         roll(1, 0);
     }
-    public void aSRoll1(View v){
+    public void fSHighRoll1(View v){
         playNote(1);
         roll(1, 1);
     }
-    public void aSRoll2(View v){
+    public void fSHighRoll2(View v){
         playNote(1);
         roll(1, 2);
     }
-    public void aSRoll3(View v){
+    public void fSHighRoll3(View v){
         playNote(1);
         roll(1, 3);
     }
-    public void aSRoll4(View v){
+    public void fSHighRoll4(View v){
         playNote(1);
         roll(1, 4);
     }
-    public void aSRoll5(View v){
+    public void fSHighRoll5(View v){
         playNote(1);
         roll(1, 5);
     }
-    public void aSRoll6(View v){
+    public void fSHighRoll6(View v){
         playNote(1);
         roll(1, 6);
     }
-    public void aSRoll7(View v){
+    public void fSHighRoll7(View v){
         playNote(1);
         roll(1, 7);
     }
 
-    public void aRoll0(View v){
+    public void fHighRoll0(View v){
         playNote(2);
         roll(2, 0);
     }
-    public void aRoll1(View v){
+    public void fHighRoll1(View v){
         playNote(2);
         roll(2, 1);
     }
-    public void aRoll2(View v){
+    public void fHighRoll2(View v){
         playNote(2);
         roll(2, 2);
     }
-    public void aRoll3(View v){
+    public void fHighRoll3(View v){
         playNote(2);
         roll(2, 3);
     }
-    public void aRoll4(View v){
+    public void fHighRoll4(View v){
         playNote(2);
         roll(2, 4);
     }
-    public void aRoll5(View v){
+    public void fHighRoll5(View v){
         playNote(2);
         roll(2, 5);
     }
-    public void aRoll6(View v){
+    public void fHighRoll6(View v){
         playNote(2);
         roll(2, 6);
     }
-    public void aRoll7(View v){
+    public void fHighRoll7(View v){
         playNote(2);
         roll(2, 7);
     }
 
-    public void gSRoll0(View v){
+    public void eHighRoll0(View v){
         playNote(3);
         roll(3, 0);
     }
-    public void gSRoll1(View v){
+    public void eHighRoll1(View v){
         playNote(3);
         roll(3, 1);
     }
-    public void gSRoll2(View v){
+    public void eHighRoll2(View v){
         playNote(3);
         roll(3, 2);
     }
-    public void gSRoll3(View v){
+    public void eHighRoll3(View v){
         playNote(3);
         roll(3, 3);
     }
-    public void gSRoll4(View v){
+    public void eHighRoll4(View v){
         playNote(3);
         roll(3, 4);
     }
-    public void gSRoll5(View v){
+    public void eHighRoll5(View v){
         playNote(3);
         roll(3, 5);
     }
-    public void gSRoll6(View v){
+    public void eHighRoll6(View v){
         playNote(3);
         roll(3, 6);
     }
-    public void gSRoll7(View v){
+    public void eHighRoll7(View v){
         playNote(3);
         roll(3, 7);
     }
 
-    public void gRoll0(View v){
+    public void dSHighRoll0(View v){
         playNote(4);
         roll(4, 0);
     }
-    public void gRoll1(View v){
+    public void dSHighRoll1(View v){
         playNote(4);
         roll(4, 1);
     }
-    public void gRoll2(View v){
+    public void dSHighRoll2(View v){
         playNote(4);
         roll(4, 2);
     }
-    public void gRoll3(View v){
+    public void dSHighRoll3(View v){
         playNote(4);
         roll(4, 3);
     }
-    public void gRoll4(View v){
+    public void dSHighRoll4(View v){
         playNote(4);
         roll(4, 4);
     }
-    public void gRoll5(View v){
+    public void dSHighRoll5(View v){
         playNote(4);
         roll(4, 5);
     }
-    public void gRoll6(View v){
+    public void dSHighRoll6(View v){
         playNote(4);
         roll(4, 6);
     }
-    public void gRoll7(View v){
+    public void dSHighRoll7(View v){
         playNote(4);
         roll(4, 7);
     }
 
-    public void fSRoll0(View v){
+    public void dHighRoll0(View v){
         playNote(5);
         roll(5, 0);
     }
-    public void fSRoll1(View v){
+    public void dHighRoll1(View v){
         playNote(5);
         roll(5, 1);
     }
-    public void fSRoll2(View v){
+    public void dHighRoll2(View v){
         playNote(5);
         roll(5, 2);
     }
-    public void fSRoll3(View v){
+    public void dHighRoll3(View v){
         playNote(5);
         roll(5, 3);
     }
-    public void fSRoll4(View v){
+    public void dHighRoll4(View v){
         playNote(5);
         roll(5, 4);
     }
-    public void fSRoll5(View v){
+    public void dHighRoll5(View v){
         playNote(5);
         roll(5, 5);
     }
-    public void fSRoll6(View v){
+    public void dHighRoll6(View v){
         playNote(5);
         roll(5, 6);
     }
-    public void fSRoll7(View v){
+    public void dHighRoll7(View v){
         playNote(5);
         roll(5, 7);
     }
 
-    public void fRoll0(View v){
+    public void cSRoll0(View v){
         playNote(6);
         roll(6, 0);
     }
-    public void fRoll1(View v){
+    public void cSRoll1(View v){
         playNote(6);
         roll(6, 1);
     }
-    public void fRoll2(View v){
+    public void cSRoll2(View v){
         playNote(6);
         roll(6, 2);
     }
-    public void fRoll3(View v){
+    public void cSRoll3(View v){
         playNote(6);
         roll(6, 3);
     }
-    public void fRoll4(View v){
+    public void cSRoll4(View v){
         playNote(6);
         roll(6, 4);
     }
-    public void fRoll5(View v){
+    public void cSRoll5(View v){
         playNote(6);
         roll(6, 5);
     }
-    public void fRoll6(View v){
+    public void cSRoll6(View v){
         playNote(6);
         roll(6, 6);
     }
-    public void fRoll7(View v){
+    public void cSRoll7(View v){
         playNote(6);
         roll(6, 7);
     }
 
-    public void eRoll0(View v){
+    public void cRoll0(View v){
         playNote(7);
         roll(7, 0);
     }
-    public void eRoll1(View v){
+    public void cRoll1(View v){
         playNote(7);
         roll(7, 1);
     }
-    public void eRoll2(View v){
+    public void cRoll2(View v){
         playNote(7);
         roll(7, 2);
     }
-    public void eRoll3(View v){
+    public void cRoll3(View v){
         playNote(7);
         roll(7, 3);
     }
-    public void eRoll4(View v){
+    public void cRoll4(View v){
         playNote(7);
         roll(7, 4);
     }
-    public void eRoll5(View v){
+    public void cRoll5(View v){
         playNote(7);
         roll(7, 5);
     }
-    public void eRoll6(View v){
+    public void cRoll6(View v){
         playNote(7);
         roll(7, 6);
     }
-    public void eRoll7(View v){
+    public void cRoll7(View v){
         playNote(7);
         roll(7, 7);
     }
 
-    public void dSRoll0(View v){
+    public void bRoll0(View v){
         playNote(8);
         roll(8, 0);
     }
-    public void dSRoll1(View v){
+    public void bRoll1(View v){
         playNote(8);
         roll(8, 1);
     }
-    public void dSRoll2(View v){
+    public void bRoll2(View v){
         playNote(8);
         roll(8, 2);
     }
-    public void dSRoll3(View v){
+    public void bRoll3(View v){
         playNote(8);
         roll(8, 3);
     }
-    public void dSRoll4(View v){
+    public void bRoll4(View v){
         playNote(8);
         roll(8, 4);
     }
-    public void dSRoll5(View v){
+    public void bRoll5(View v){
         playNote(8);
         roll(8, 5);
     }
-    public void dSRoll6(View v){
+    public void bRoll6(View v){
         playNote(8);
         roll(8, 6);
     }
-    public void dSRoll7(View v){
+    public void bRoll7(View v){
         playNote(8);
         roll(8, 7);
     }
 
-    public void dRoll0(View v){
+    public void aSRoll0(View v){
         playNote(9);
         roll(9, 0);
     }
-    public void dRoll1(View v){
+    public void aSRoll1(View v){
         playNote(9);
         roll(9, 1);
     }
-    public void dRoll2(View v){
+    public void aSRoll2(View v){
         playNote(9);
         roll(9, 2);
     }
-    public void dRoll3(View v){
+    public void aSRoll3(View v){
         playNote(9);
         roll(9, 3);
     }
-    public void dRoll4(View v){
-        playNote(9);
+    public void aSRoll4(View v){
+        playNote(89);
         roll(9, 4);
     }
-    public void dRoll5(View v){
-        playNote(9);
+    public void aSRoll5(View v){
+        playNote(89);
         roll(9, 5);
     }
-    public void dRoll6(View v){
+    public void aSRoll6(View v){
         playNote(9);
         roll(9, 6);
     }
-    public void dRoll7(View v){
+    public void aSRoll7(View v){
         playNote(9);
         roll(9, 7);
+    }
+
+    public void aRoll0(View v){
+        playNote(10);
+        roll(10, 0);
+    }
+    public void aRoll1(View v){
+        playNote(10);
+        roll(10, 1);
+    }
+    public void aRoll2(View v){
+        playNote(10);
+        roll(10, 2);
+    }
+    public void aRoll3(View v){
+        playNote(10);
+        roll(10, 3);
+    }
+    public void aRoll4(View v){
+        playNote(10);
+        roll(10, 4);
+    }
+    public void aRoll5(View v){
+        playNote(10);
+        roll(10, 5);
+    }
+    public void aRoll6(View v){
+        playNote(10);
+        roll(10, 6);
+    }
+    public void aRoll7(View v){
+        playNote(10);
+        roll(10, 7);
+    }
+
+    public void gSRoll0(View v){
+        playNote(11);
+        roll(11, 0);
+    }
+    public void gSRoll1(View v){
+        playNote(11);
+        roll(11, 1);
+    }
+    public void gSRoll2(View v){
+        playNote(11);
+        roll(11, 2);
+    }
+    public void gSRoll3(View v){
+        playNote(11);
+        roll(11, 3);
+    }
+    public void gSRoll4(View v){
+        playNote(11);
+        roll(11, 4);
+    }
+    public void gSRoll5(View v){
+        playNote(11);
+        roll(11, 5);
+    }
+    public void gSRoll6(View v){
+        playNote(11);
+        roll(11, 6);
+    }
+    public void gSRoll7(View v){
+        playNote(11);
+        roll(11, 7);
+    }
+
+    public void gRoll0(View v){
+        playNote(12);
+        roll(12, 0);
+    }
+    public void gRoll1(View v){
+        playNote(12);
+        roll(12, 1);
+    }
+    public void gRoll2(View v){
+        playNote(12);
+        roll(12, 2);
+    }
+    public void gRoll3(View v){
+        playNote(12);
+        roll(12, 3);
+    }
+    public void gRoll4(View v){
+        playNote(12);
+        roll(12, 4);
+    }
+    public void gRoll5(View v){
+        playNote(12);
+        roll(12, 5);
+    }
+    public void gRoll6(View v){
+        playNote(12);
+        roll(12, 6);
+    }
+    public void gRoll7(View v){
+        playNote(12);
+        roll(12, 7);
+    }
+
+    public void fSRoll0(View v){
+        playNote(13);
+        roll(13, 0);
+    }
+    public void fSRoll1(View v){
+        playNote(13);
+        roll(13, 1);
+    }
+    public void fSRoll2(View v){
+        playNote(13);
+        roll(13, 2);
+    }
+    public void fSRoll3(View v){
+        playNote(13);
+        roll(13, 3);
+    }
+    public void fSRoll4(View v){
+        playNote(13);
+        roll(13, 4);
+    }
+    public void fSRoll5(View v){
+        playNote(13);
+        roll(13, 5);
+    }
+    public void fSRoll6(View v){
+        playNote(13);
+        roll(13, 6);
+    }
+    public void fSRoll7(View v){
+        playNote(13);
+        roll(13, 7);
+    }
+
+    public void fRoll0(View v){
+        playNote(14);
+        roll(14, 0);
+    }
+    public void fRoll1(View v){
+        playNote(14);
+        roll(14, 1);
+    }
+    public void fRoll2(View v){
+        playNote(14);
+        roll(14, 2);
+    }
+    public void fRoll3(View v){
+        playNote(14);
+        roll(14, 3);
+    }
+    public void fRoll4(View v){
+        playNote(14);
+        roll(14, 4);
+    }
+    public void fRoll5(View v){
+        playNote(14);
+        roll(14, 5);
+    }
+    public void fRoll6(View v){
+        playNote(14);
+        roll(14, 6);
+    }
+    public void fRoll7(View v){
+        playNote(14);
+        roll(14, 7);
+    }
+
+    public void eRoll0(View v){
+        playNote(15);
+        roll(15, 0);
+    }
+    public void eRoll1(View v){
+        playNote(15);
+        roll(15, 1);
+    }
+    public void eRoll2(View v){
+        playNote(15);
+        roll(15, 2);
+    }
+    public void eRoll3(View v){
+        playNote(15);
+        roll(15, 3);
+    }
+    public void eRoll4(View v){
+        playNote(15);
+        roll(15, 4);
+    }
+    public void eRoll5(View v){
+        playNote(15);
+        roll(15, 5);
+    }
+    public void eRoll6(View v){
+        playNote(15);
+        roll(15, 6);
+    }
+    public void eRoll7(View v){
+        playNote(15);
+        roll(15, 7);
+    }
+
+    public void dSRoll0(View v){
+        playNote(16);
+        roll(16, 0);
+    }
+    public void dSRoll1(View v){
+        playNote(16);
+        roll(16, 1);
+    }
+    public void dSRoll2(View v){
+        playNote(16);
+        roll(16, 2);
+    }
+    public void dSRoll3(View v){
+        playNote(16);
+        roll(16, 3);
+    }
+    public void dSRoll4(View v){
+        playNote(16);
+        roll(16, 4);
+    }
+    public void dSRoll5(View v){
+        playNote(16);
+        roll(16, 5);
+    }
+    public void dSRoll6(View v){
+        playNote(16);
+        roll(16, 6);
+    }
+    public void dSRoll7(View v){
+        playNote(16);
+        roll(16, 7);
+    }
+
+    public void dRoll0(View v){
+        playNote(17);
+        roll(17, 0);
+    }
+    public void dRoll1(View v){
+        playNote(17);
+        roll(17, 1);
+    }
+    public void dRoll2(View v){
+        playNote(17);
+        roll(17, 2);
+    }
+    public void dRoll3(View v){
+        playNote(17);
+        roll(17, 3);
+    }
+    public void dRoll4(View v){
+        playNote(17);
+        roll(17, 4);
+    }
+    public void dRoll5(View v){
+        playNote(17);
+        roll(17, 5);
+    }
+    public void dRoll6(View v){
+        playNote(17);
+        roll(17, 6);
+    }
+    public void dRoll7(View v){
+        playNote(17);
+        roll(17, 7);
     }
 
 }
