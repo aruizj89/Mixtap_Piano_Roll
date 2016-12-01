@@ -8,13 +8,13 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private NoteStructure[][] notes = new NoteStructure[12][8];
+    private NoteStructure[][] notes = new NoteStructure[18][8];
     private MeasureStructure measure = new MeasureStructure();
 
     private MediaPlayer mPlayer;
 
     private ImageButton b, a_sharp, a, g_sharp, g, f_sharp, f, e, d_sharp, d, c_sharp, c;
-    private ImageButton[][] rollImages = new ImageButton[12][8];
+    private ImageButton[][] rollImages = new ImageButton[18][8];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupNotes(){
-        for(int i = 0; i < 12; i++){
+        for(int i = 0; i < 18; i++){
             for(int j = 0; j < 8; j++){
                 notes[i][j] = new NoteStructure(i, j);
             }
@@ -156,11 +156,76 @@ public class MainActivity extends AppCompatActivity {
         rollImages[11][5] = (ImageButton)findViewById(R.id.r11c5);
         rollImages[11][6] = (ImageButton)findViewById(R.id.r11c6);
         rollImages[11][7] = (ImageButton)findViewById(R.id.r11c7);
+
+        rollImages[12][0] = (ImageButton)findViewById(R.id.r12c0);
+        rollImages[12][1] = (ImageButton)findViewById(R.id.r12c1);
+        rollImages[12][2] = (ImageButton)findViewById(R.id.r12c2);
+        rollImages[12][3] = (ImageButton)findViewById(R.id.r12c3);
+        rollImages[12][4] = (ImageButton)findViewById(R.id.r12c4);
+        rollImages[12][5] = (ImageButton)findViewById(R.id.r12c5);
+        rollImages[12][6] = (ImageButton)findViewById(R.id.r12c6);
+        rollImages[12][7] = (ImageButton)findViewById(R.id.r12c7);
+
+        rollImages[13][0] = (ImageButton)findViewById(R.id.r13c0);
+        rollImages[13][1] = (ImageButton)findViewById(R.id.r13c1);
+        rollImages[13][2] = (ImageButton)findViewById(R.id.r13c2);
+        rollImages[13][3] = (ImageButton)findViewById(R.id.r13c3);
+        rollImages[13][4] = (ImageButton)findViewById(R.id.r13c4);
+        rollImages[13][5] = (ImageButton)findViewById(R.id.r13c5);
+        rollImages[13][6] = (ImageButton)findViewById(R.id.r13c6);
+        rollImages[13][7] = (ImageButton)findViewById(R.id.r13c7);
+
+        rollImages[14][0] = (ImageButton)findViewById(R.id.r14c0);
+        rollImages[14][1] = (ImageButton)findViewById(R.id.r14c1);
+        rollImages[14][2] = (ImageButton)findViewById(R.id.r14c2);
+        rollImages[14][3] = (ImageButton)findViewById(R.id.r14c3);
+        rollImages[14][4] = (ImageButton)findViewById(R.id.r14c4);
+        rollImages[14][5] = (ImageButton)findViewById(R.id.r14c5);
+        rollImages[14][6] = (ImageButton)findViewById(R.id.r14c6);
+        rollImages[14][7] = (ImageButton)findViewById(R.id.r14c7);
+
+        rollImages[15][0] = (ImageButton)findViewById(R.id.r15c0);
+        rollImages[15][1] = (ImageButton)findViewById(R.id.r15c1);
+        rollImages[15][2] = (ImageButton)findViewById(R.id.r15c2);
+        rollImages[15][3] = (ImageButton)findViewById(R.id.r15c3);
+        rollImages[15][4] = (ImageButton)findViewById(R.id.r15c4);
+        rollImages[15][5] = (ImageButton)findViewById(R.id.r15c5);
+        rollImages[15][6] = (ImageButton)findViewById(R.id.r15c6);
+        rollImages[15][7] = (ImageButton)findViewById(R.id.r15c7);
+
+        rollImages[16][0] = (ImageButton)findViewById(R.id.r16c0);
+        rollImages[16][1] = (ImageButton)findViewById(R.id.r16c1);
+        rollImages[16][2] = (ImageButton)findViewById(R.id.r16c2);
+        rollImages[16][3] = (ImageButton)findViewById(R.id.r16c3);
+        rollImages[16][4] = (ImageButton)findViewById(R.id.r16c4);
+        rollImages[16][5] = (ImageButton)findViewById(R.id.r16c5);
+        rollImages[16][6] = (ImageButton)findViewById(R.id.r16c6);
+        rollImages[16][7] = (ImageButton)findViewById(R.id.r16c7);
+
+        rollImages[17][0] = (ImageButton)findViewById(R.id.r17c0);
+        rollImages[17][1] = (ImageButton)findViewById(R.id.r17c1);
+        rollImages[17][2] = (ImageButton)findViewById(R.id.r17c2);
+        rollImages[17][3] = (ImageButton)findViewById(R.id.r17c3);
+        rollImages[17][4] = (ImageButton)findViewById(R.id.r17c4);
+        rollImages[17][5] = (ImageButton)findViewById(R.id.r17c5);
+        rollImages[17][6] = (ImageButton)findViewById(R.id.r17c6);
+        rollImages[17][7] = (ImageButton)findViewById(R.id.r17c7);
     }
+
 
     private void roll(int pitch, int time){
         //save pitch and timing into data structure
         notes[pitch][time].switchNote();
+        measure.setNote(time, pitch);
+
+        //clears note if previously selected in time slot
+        for(int i = 0; i < 18; i++){
+            if(i == pitch) continue;
+            rollImages[i][time].setImageResource(R.drawable.empty_note);
+            if(notes[i][time].isNoteSet()) notes[i][time].switchNote();
+        }
+
+        //highlights selected note
         if(notes[pitch][time].isNoteSet())
             rollImages[pitch][time].setImageResource(R.drawable.selected_note);
         else
@@ -236,6 +301,9 @@ public class MainActivity extends AppCompatActivity {
         //to do
     }
 
+
+
+    //piano key button functions
     public void bPiano(View v){
         playNote(0);
     }
@@ -271,6 +339,272 @@ public class MainActivity extends AppCompatActivity {
     }
     public void cPiano(View v){
         playNote(11);
+    }
+
+    //piano roll button functions
+    public void gHighRoll0(View v){
+        playNote(4);
+        roll(4, 0);
+    }
+    public void gHighRoll1(View v){
+        playNote(4);
+        roll(4, 1);
+    }
+    public void gHighRoll2(View v){
+        playNote(4);
+        roll(4, 2);
+    }
+    public void gHighRoll3(View v){
+        playNote(4);
+        roll(4, 3);
+    }
+    public void gHighRoll4(View v){
+        playNote(4);
+        roll(4, 4);
+    }
+    public void gHighRoll5(View v){
+        playNote(4);
+        roll(4, 5);
+    }
+    public void gHighRoll6(View v){
+        playNote(4);
+        roll(4, 6);
+    }
+    public void gHighRoll7(View v){
+        playNote(4);
+        roll(4, 7);
+    }
+
+    public void fSHighRoll0(View v){
+        playNote(5);
+        roll(5, 0);
+    }
+    public void fSHighRoll1(View v){
+        playNote(5);
+        roll(5, 1);
+    }
+    public void fSHighRoll2(View v){
+        playNote(5);
+        roll(5, 2);
+    }
+    public void fSHighRoll3(View v){
+        playNote(5);
+        roll(5, 3);
+    }
+    public void fSHighRoll4(View v){
+        playNote(5);
+        roll(5, 4);
+    }
+    public void fSHighRoll5(View v){
+        playNote(5);
+        roll(5, 5);
+    }
+    public void fSHighRoll6(View v){
+        playNote(5);
+        roll(5, 6);
+    }
+    public void fSHighRoll7(View v){
+        playNote(5);
+        roll(5, 7);
+    }
+
+    public void fHighRoll0(View v){
+        playNote(6);
+        roll(6, 0);
+    }
+    public void fHighRoll1(View v){
+        playNote(6);
+        roll(6, 1);
+    }
+    public void fHighRoll2(View v){
+        playNote(6);
+        roll(6, 2);
+    }
+    public void fHighRoll3(View v){
+        playNote(6);
+        roll(6, 3);
+    }
+    public void fHighRoll4(View v){
+        playNote(6);
+        roll(6, 4);
+    }
+    public void fHighRoll5(View v){
+        playNote(6);
+        roll(6, 5);
+    }
+    public void fHighRoll6(View v){
+        playNote(6);
+        roll(6, 6);
+    }
+    public void fHighRoll7(View v){
+        playNote(6);
+        roll(6, 7);
+    }
+
+    public void eHighRoll0(View v){
+        playNote(7);
+        roll(7, 0);
+    }
+    public void eHighRoll1(View v){
+        playNote(7);
+        roll(7, 1);
+    }
+    public void eHighRoll2(View v){
+        playNote(7);
+        roll(7, 2);
+    }
+    public void eHighRoll3(View v){
+        playNote(7);
+        roll(7, 3);
+    }
+    public void eHighRoll4(View v){
+        playNote(7);
+        roll(7, 4);
+    }
+    public void eHighRoll5(View v){
+        playNote(7);
+        roll(7, 5);
+    }
+    public void eHighRoll6(View v){
+        playNote(7);
+        roll(7, 6);
+    }
+    public void eHighRoll7(View v){
+        playNote(7);
+        roll(7, 7);
+    }
+
+    public void dSHighRoll0(View v){
+        playNote(8);
+        roll(8, 0);
+    }
+    public void dSHighRoll1(View v){
+        playNote(8);
+        roll(8, 1);
+    }
+    public void dSHighRoll2(View v){
+        playNote(8);
+        roll(8, 2);
+    }
+    public void dSHighRoll3(View v){
+        playNote(8);
+        roll(8, 3);
+    }
+    public void dSHighRoll4(View v){
+        playNote(8);
+        roll(8, 4);
+    }
+    public void dSHighRoll5(View v){
+        playNote(8);
+        roll(8, 5);
+    }
+    public void dSHighRoll6(View v){
+        playNote(8);
+        roll(8, 6);
+    }
+    public void dSHighRoll7(View v){
+        playNote(8);
+        roll(8, 7);
+    }
+
+    public void dHighRoll0(View v){
+        playNote(9);
+        roll(9, 0);
+    }
+    public void dHighRoll1(View v){
+        playNote(9);
+        roll(9, 1);
+    }
+    public void dHighRoll2(View v){
+        playNote(9);
+        roll(9, 2);
+    }
+    public void dHighRoll3(View v){
+        playNote(9);
+        roll(9, 3);
+    }
+    public void dHighRoll4(View v){
+        playNote(9);
+        roll(9, 4);
+    }
+    public void dHighRoll5(View v){
+        playNote(9);
+        roll(9, 5);
+    }
+    public void dHighRoll6(View v){
+        playNote(9);
+        roll(9, 6);
+    }
+    public void dHighRoll7(View v){
+        playNote(9);
+        roll(9, 7);
+    }
+
+
+    public void cSRoll0(View v){
+        playNote(10);
+        roll(10, 0);
+    }
+    public void cSRoll1(View v){
+        playNote(10);
+        roll(10, 1);
+    }
+    public void cSRoll2(View v){
+        playNote(10);
+        roll(10, 2);
+    }
+    public void cSRoll3(View v){
+        playNote(10);
+        roll(10, 3);
+    }
+    public void cSRoll4(View v){
+        playNote(10);
+        roll(10, 4);
+    }
+    public void cSRoll5(View v){
+        playNote(10);
+        roll(10, 5);
+    }
+    public void cSRoll6(View v){
+        playNote(10);
+        roll(10, 6);
+    }
+    public void cSRoll7(View v){
+        playNote(10);
+        roll(10, 7);
+    }
+
+    public void cRoll0(View v){
+        playNote(11);
+        roll(11, 0);
+    }
+    public void cRoll1(View v){
+        playNote(11);
+        roll(11, 1);
+    }
+    public void cRoll2(View v){
+        playNote(11);
+        roll(11, 2);
+    }
+    public void cRoll3(View v){
+        playNote(11);
+        roll(11, 3);
+    }
+    public void cRoll4(View v){
+        playNote(11);
+        roll(11, 4);
+    }
+    public void cRoll5(View v){
+        playNote(11);
+        roll(11, 5);
+    }
+    public void cRoll6(View v){
+        playNote(11);
+        roll(11, 6);
+    }
+    public void cRoll7(View v){
+        playNote(11);
+        roll(11, 7);
     }
 
     public void bRoll0(View v){
@@ -601,72 +935,6 @@ public class MainActivity extends AppCompatActivity {
     public void dRoll7(View v){
         playNote(9);
         roll(9, 7);
-    }
-
-    public void cSRoll0(View v){
-        playNote(10);
-        roll(10, 0);
-    }
-    public void cSRoll1(View v){
-        playNote(10);
-        roll(10, 1);
-    }
-    public void cSRoll2(View v){
-        playNote(10);
-        roll(10, 2);
-    }
-    public void cSRoll3(View v){
-        playNote(10);
-        roll(10, 3);
-    }
-    public void cSRoll4(View v){
-        playNote(10);
-        roll(10, 4);
-    }
-    public void cSRoll5(View v){
-        playNote(10);
-        roll(10, 5);
-    }
-    public void cSRoll6(View v){
-        playNote(10);
-        roll(10, 6);
-    }
-    public void cSRoll7(View v){
-        playNote(10);
-        roll(10, 7);
-    }
-
-    public void cRoll0(View v){
-        playNote(11);
-        roll(11, 0);
-    }
-    public void cRoll1(View v){
-        playNote(11);
-        roll(11, 1);
-    }
-    public void cRoll2(View v){
-        playNote(11);
-        roll(11, 2);
-    }
-    public void cRoll3(View v){
-        playNote(11);
-        roll(11, 3);
-    }
-    public void cRoll4(View v){
-        playNote(11);
-        roll(11, 4);
-    }
-    public void cRoll5(View v){
-        playNote(11);
-        roll(11, 5);
-    }
-    public void cRoll6(View v){
-        playNote(11);
-        roll(11, 6);
-    }
-    public void cRoll7(View v){
-        playNote(11);
-        roll(11, 7);
     }
 
 }
