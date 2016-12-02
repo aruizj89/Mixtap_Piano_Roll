@@ -1,5 +1,6 @@
 package com.example.arturo.mixtap_piano_roll;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,13 +20,20 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton b, a_sharp, a, g_sharp, g, f_sharp, f, e, d_sharp, d, c_sharp, c;
     private ImageButton[][] rollImages = new ImageButton[18][8];
 
+    private Measure sheetMusic;
+    private int notesP[] = {-1, -1, -1, -1, -1, -1, -1, -1};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sheetMusic = (Measure) findViewById(R.id.measure);
         setupNotes();
         setupButtons();
+        sheetMusic.setNotes(notesP);
     }
+
 
     private void setupNotes(){
         for(int i = 0; i < 18; i++){
@@ -215,14 +223,74 @@ public class MainActivity extends AppCompatActivity {
         rollImages[17][7] = (ImageButton)findViewById(R.id.r17c7);
     }
 
+
+    //gabcdef#g "key of G"
+    int keyOfG[] = {12, 10, 8, 7, 5, 3, 1, 0};
+
+    //determines the key the current melody
+    private int currentKey(){
+        //idea for suggestion notes, currently only suggest if melody is in key of G
+        boolean gKey = true;
+
+        for(int i = 0; i < 8; i++){
+            int n = measure.getNote(i);
+            if(n == -1)
+                continue;//rest note
+
+            for(int j = 0; j < keyOfG.length+1; j++){
+                if(j == 8){
+                    gKey = false;
+                    break;
+                }
+                if(n == keyOfG[j])
+                    break;
+
+            }
+
+        }
+
+        if(gKey)
+            return 1;
+
+        return -1;//default for now
+    }
+
+    //suggests notes for progression of melody
     private void suggestNotes(int time){
         if(measure.getNote(time) != -1)
             return;
-        for(int i = 0; i < 3; i++)
-            rollImages[random.nextInt(18)][time].setImageResource(R.drawable.suggested_note);
+
+        //check for current scale
+        switch (currentKey()){
+            case 1:
+                //gabcdef#g "key of G"
+                //recommend 3 notes in the key of C
+                rollImages[keyOfG[random.nextInt(8)]][time].setImageResource(R.drawable.suggested_note);
+                rollImages[keyOfG[random.nextInt(8)]][time].setImageResource(R.drawable.suggested_note);
+                rollImages[keyOfG[random.nextInt(8)]][time].setImageResource(R.drawable.suggested_note);
+                break;
+            default:
+                //temporary- if not in key of G or C
+                //randomly selects three notes for now
+                for(int i = 0; i < 3; i++)
+                    rollImages[random.nextInt(18)][time].setImageResource(R.drawable.suggested_note);
+                break;
+        }
     }
 
+    //updates view for empty notes
+    private void clearRestNotes(){
+        for(int i = 0; i < 18; i++){
+            for(int j = 0; j < 8; j++){
+                if(notes[i][j].isNoteSet())
+                    continue;
+                rollImages[i][j].setImageResource(R.drawable.empty_note);
+            }
+        }
+    }
 
+    //roll function takes records data to structures based on grid
+    //y axis relates to pitch and x axis relates to time
     private void roll(int pitch, int time){
         //save pitch and timing into data structure
         notes[pitch][time].switchNote();
@@ -241,12 +309,11 @@ public class MainActivity extends AppCompatActivity {
         else
             rollImages[pitch][time].setImageResource(R.drawable.empty_note);
 
+        sheetMusic.setNotes(measure.getNotePositions());
+        clearRestNotes();
+
         if(time == 7 || measure.getNote(time+1) != -1)
             return;
-
-        //clear current suggestions if any
-        for(int i = 0; i < 18; i++)
-            rollImages[i][time].setImageResource(R.drawable.empty_note);
 
         suggestNotes(time+1);
     }

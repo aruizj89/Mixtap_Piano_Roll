@@ -55,7 +55,7 @@ public class MeasureStructure {
             case  15:
                 notePosition[time] = 180;
                 break;
-            case  16:
+            case  17:
                 notePosition[time] = 200;
                 break;
             default:
@@ -83,6 +83,10 @@ public class MeasureStructure {
     public void resetPlayed() {
         for(int i = 0; i < 8; i++)
             played[0] = false;
+    }
+
+    public int[] getNotePositions(){
+        return notePosition;
     }
 
 
